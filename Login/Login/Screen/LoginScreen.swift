@@ -39,6 +39,19 @@ class LoginScreen: UIView {
         return tf
     }()
     
+    lazy var passwordTextField: UITextField = {
+        let tf = UITextField()
+        tf.translatesAutoresizingMaskIntoConstraints = false
+        tf.autocorrectionType = .no
+        tf.backgroundColor = .white
+        tf.borderStyle = .roundedRect
+        tf.keyboardType = .default
+        tf.isSecureTextEntry = true
+        tf.placeholder = "Digite seu Senha"
+        tf.textColor = .darkGray
+        return tf
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.configBackGround()
@@ -54,6 +67,7 @@ class LoginScreen: UIView {
         self.addSubview(self.loginLabel)
         self.addSubview(self.logoAppImageView)
         self.addSubview(self.emailTextField)
+        self.addSubview(self.passwordTextField)
     }
     
     private func configBackGround() {
@@ -68,7 +82,17 @@ class LoginScreen: UIView {
             self.logoAppImageView.topAnchor.constraint(equalTo: self.loginLabel.bottomAnchor,constant: 20),
             self.logoAppImageView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 60),
             self.logoAppImageView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -60),
-            self.logoAppImageView.heightAnchor.constraint(equalToConstant: 200)
+            self.logoAppImageView.heightAnchor.constraint(equalToConstant: 200),
+            
+            self.emailTextField.topAnchor.constraint(equalTo: self.logoAppImageView.bottomAnchor,constant: 20),
+            self.emailTextField.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
+            self.emailTextField.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20),
+            self.emailTextField.heightAnchor.constraint(equalToConstant: 45),
+            
+            self.passwordTextField.topAnchor.constraint(equalTo: self.emailTextField.bottomAnchor,constant: 15),
+            self.passwordTextField.leadingAnchor.constraint(equalTo: self.emailTextField.leadingAnchor),
+            self.passwordTextField.trailingAnchor.constraint(equalTo: self.emailTextField.trailingAnchor),
+            self.passwordTextField.heightAnchor.constraint(equalTo: self.emailTextField.heightAnchor),
         ])
     }
     
