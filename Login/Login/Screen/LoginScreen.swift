@@ -8,7 +8,7 @@
 import UIKit
 
 class LoginScreen: UIView {
-
+    
     lazy var loginLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -26,17 +26,38 @@ class LoginScreen: UIView {
         image.contentMode = .scaleAspectFit
         return image
     }()
-
+    
+    lazy var emailTextField: UITextField = {
+        let tf = UITextField()
+        tf.translatesAutoresizingMaskIntoConstraints = false
+        tf.autocorrectionType = .no
+        tf.backgroundColor = .white
+        tf.borderStyle = .roundedRect
+        tf.keyboardType = .emailAddress
+        tf.placeholder = "Digite seu Email"
+        tf.textColor = .darkGray
+        return tf
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.backgroundColor = .gray
-        self.addSubview(self.loginLabel)
-        self.addSubview(self.logoAppImageView)
+        self.configBackGround()
+        self.configSuperView()
         self.setUpConstraints()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    private func configSuperView() {
+        self.addSubview(self.loginLabel)
+        self.addSubview(self.logoAppImageView)
+        self.addSubview(self.emailTextField)
+    }
+    
+    private func configBackGround() {
+        self.backgroundColor = .gray
     }
     
     private func setUpConstraints() {
@@ -50,5 +71,5 @@ class LoginScreen: UIView {
             self.logoAppImageView.heightAnchor.constraint(equalToConstant: 200)
         ])
     }
-        
+    
 }
