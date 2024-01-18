@@ -29,6 +29,7 @@ class LoginScreen: UIView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
+        self.backgroundColor = .gray
         self.addSubview(self.loginLabel)
         self.addSubview(self.logoAppImageView)
         self.setUpConstraints()
@@ -40,9 +41,13 @@ class LoginScreen: UIView {
     
     private func setUpConstraints() {
         NSLayoutConstraint.activate([
+            self.loginLabel.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 10),
             self.loginLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            self.loginLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor),
             
+            self.logoAppImageView.topAnchor.constraint(equalTo: self.loginLabel.bottomAnchor,constant: 20),
+            self.logoAppImageView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 60),
+            self.logoAppImageView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -60),
+            self.logoAppImageView.heightAnchor.constraint(equalToConstant: 200)
         ])
     }
         
