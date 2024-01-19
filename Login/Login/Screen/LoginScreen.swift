@@ -97,6 +97,11 @@ class LoginScreen: UIView {
         self.backgroundColor = .gray
     }
     
+    public func configTextFieldDelegate(delegate:UITextFieldDelegate) {
+        self.emailTextField.delegate = delegate
+        self.passwordTextField.delegate = delegate
+    }
+    
     private func setUpConstraints() {
         NSLayoutConstraint.activate([
             self.loginLabel.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 10),
