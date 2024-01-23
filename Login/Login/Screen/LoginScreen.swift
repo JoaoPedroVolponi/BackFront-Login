@@ -7,8 +7,13 @@
 
 import UIKit
 
+protocol LoginScreenProtocol:class {
+    func actionLoginButton()
+    func actionRegisterButton()
+}
+
 class LoginScreen: UIView {
-    
+        
     lazy var loginLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
