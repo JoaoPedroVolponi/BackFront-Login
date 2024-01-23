@@ -13,7 +13,13 @@ protocol LoginScreenProtocol:class {
 }
 
 class LoginScreen: UIView {
-        
+    
+    weak var delegate: LoginScreenProtocol?
+    
+    func delegate(delegate:LoginScreenProtocol?){
+        self.delegate = delegate
+    }
+    
     lazy var loginLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
