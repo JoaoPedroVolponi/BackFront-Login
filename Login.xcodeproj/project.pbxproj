@@ -13,6 +13,7 @@
 		81AD265A2B51D0540054C477 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81AD26592B51D0540054C477 /* Assets.xcassets */; };
 		81AD265D2B51D0540054C477 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AD265B2B51D0540054C477 /* LaunchScreen.storyboard */; };
 		81AD26682B57572B0054C477 /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81AD26672B57572B0054C477 /* LoginScreen.swift */; };
+		81AD266F2B61EFAD0054C477 /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81AD266E2B61EFAD0054C477 /* RegisterVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		81AD265C2B51D0540054C477 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		81AD265E2B51D0540054C477 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		81AD26672B57572B0054C477 /* LoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
+		81AD266E2B61EFAD0054C477 /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 			isa = PBXGroup;
 			children = (
 				81AD26642B5756CD0054C477 /* Login */,
+				81AD26692B61EF0B0054C477 /* Register */,
 				81AD26502B51D0530054C477 /* AppDelegate.swift */,
 				81AD26522B51D0530054C477 /* SceneDelegate.swift */,
 				81AD26592B51D0540054C477 /* Assets.xcassets */,
@@ -89,6 +92,30 @@
 				81AD26672B57572B0054C477 /* LoginScreen.swift */,
 			);
 			path = Screen;
+			sourceTree = "<group>";
+		};
+		81AD26692B61EF0B0054C477 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				81AD266A2B61EF2D0054C477 /* Screen */,
+				81AD266B2B61EF360054C477 /* VC */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		81AD266A2B61EF2D0054C477 /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		81AD266B2B61EF360054C477 /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				81AD266E2B61EFAD0054C477 /* RegisterVC.swift */,
+			);
+			path = VC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -165,6 +192,7 @@
 				81AD26682B57572B0054C477 /* LoginScreen.swift in Sources */,
 				81AD26512B51D0530054C477 /* AppDelegate.swift in Sources */,
 				81AD26532B51D0530054C477 /* SceneDelegate.swift in Sources */,
+				81AD266F2B61EFAD0054C477 /* RegisterVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

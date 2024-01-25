@@ -35,6 +35,8 @@ extension ViewController: LoginScreenProtocol {
     
     func actionRegisterButton() {
         print("Register Button")
+        let vc: RegisterVC = RegisterVC()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     
