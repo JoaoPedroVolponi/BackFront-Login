@@ -14,7 +14,7 @@ protocol LoginScreenProtocol:class {
 
 class LoginScreen: UIView {
     
-    weak var delegate: LoginScreenProtocol?
+    private weak var delegate: LoginScreenProtocol?
     
     func delegate(delegate:LoginScreenProtocol?){
         self.delegate = delegate
@@ -116,11 +116,13 @@ class LoginScreen: UIView {
     }
     
     @objc private func tappedLoginButton() {
-        print("Botão de Login foi pressionado")
+        self.delegate?.actionLoginButton()
+//        print("Botão de Login foi pressionado")
     }
     
     @objc private func tappedRegisterButton() {
-        print("Botão de Registrar foi pressionado")
+        self.delegate?.actionRegisterButton()
+//        print("Botão de Registrar foi pressionado")
     }
     
     private func setUpConstraints() {
