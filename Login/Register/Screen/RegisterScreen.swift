@@ -19,6 +19,8 @@ class RegisterScreen: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.configBackGround()
+        self.configSuperView()
+        self.configConstraints()
     }
     
     required init?(coder: NSCoder) {
@@ -30,6 +32,10 @@ class RegisterScreen: UIView {
     }
     
     private func configSuperView() {
+        self.addSubview(backButton)
+    }
+    
+    private func configConstraints() { 
         
     }
 }
