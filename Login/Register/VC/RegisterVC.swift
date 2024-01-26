@@ -9,10 +9,14 @@ import UIKit
 
 class RegisterVC: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.view.backgroundColor = .red
+    var registerScreen: RegisterScreen?
+    
+    override func loadView() {
+        self.registerScreen = RegisterScreen()
+        self.view = self.registerScreen
     }
     
-
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
 }
