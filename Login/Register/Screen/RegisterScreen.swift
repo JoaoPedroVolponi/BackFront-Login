@@ -24,6 +24,33 @@ class RegisterScreen: UIView {
         return image
     }()
     
+    lazy var emailTextField: UITextField = {
+        let tf = UITextField()
+        tf.translatesAutoresizingMaskIntoConstraints = false
+        tf.autocorrectionType = .no
+        tf.backgroundColor = .white
+        tf.borderStyle = .roundedRect
+        tf.keyboardType = .emailAddress
+        tf.placeholder = "Digite seu Email"
+        tf.font = UIFont.systemFont(ofSize: 14)
+        tf.textColor = .darkGray
+        return tf
+    }()
+    
+    lazy var passwordTextField: UITextField = {
+        let tf = UITextField()
+        tf.translatesAutoresizingMaskIntoConstraints = false
+        tf.autocorrectionType = .no
+        tf.backgroundColor = .white
+        tf.borderStyle = .roundedRect
+        tf.keyboardType = .emailAddress
+        tf.placeholder = "Digite sua Senha"
+        tf.font = UIFont.systemFont(ofSize: 14)
+        tf.textColor = .darkGray
+        tf.isSecureTextEntry = true
+        return tf
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.configBackGround()
@@ -42,6 +69,7 @@ class RegisterScreen: UIView {
     private func configSuperView() {
         self.addSubview(backButton)
         self.addSubview(self.imageAddUser)
+        
     }
     
     private func configConstraints() { 
