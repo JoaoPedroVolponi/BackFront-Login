@@ -80,7 +80,9 @@ class RegisterScreen: UIView {
     private func configSuperView() {
         self.addSubview(backButton)
         self.addSubview(self.imageAddUser)
-        
+        self.addSubview(self.emailTextField)
+        self.addSubview(self.passwordTextField)
+        self.addSubview(self.registerButton)
     }
     
     private func configConstraints() { 
@@ -92,6 +94,21 @@ class RegisterScreen: UIView {
             
             self.backButton.topAnchor.constraint(equalTo: self.imageAddUser.topAnchor),
             self.backButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
+            
+            self.emailTextField.topAnchor.constraint(equalTo: self.imageAddUser.bottomAnchor, constant: 10),
+            self.emailTextField.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
+            self.emailTextField.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20),
+            self.emailTextField.heightAnchor.constraint(equalToConstant: 45),
+            
+            self.passwordTextField.topAnchor.constraint(equalTo: self.emailTextField.bottomAnchor, constant: 15),
+            self.passwordTextField.leadingAnchor.constraint(equalTo: self.emailTextField.leadingAnchor),
+            self.passwordTextField.trailingAnchor.constraint(equalTo: self.emailTextField.trailingAnchor),
+            self.passwordTextField.heightAnchor.constraint(equalTo: self.emailTextField.heightAnchor),
+            
+            self.registerButton.topAnchor.constraint(equalTo: self.passwordTextField.bottomAnchor, constant: 15),
+            self.registerButton.leadingAnchor.constraint(equalTo: self.emailTextField.leadingAnchor),
+            self.registerButton.trailingAnchor.constraint(equalTo: self.emailTextField.trailingAnchor),
+            self.registerButton.heightAnchor.constraint(equalTo: self.emailTextField.heightAnchor),
         ])
     }
 }
