@@ -16,6 +16,14 @@ class RegisterScreen: UIView {
         return button
     }()
     
+    lazy var imageAddUser: UIImageView = {
+        let image = UIImageView()
+        image.translatesAutoresizingMaskIntoConstraints = false
+        image.image = UIImage(named: "usuario")
+        image.contentMode = .scaleAspectFit
+        return image
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.configBackGround()
@@ -33,9 +41,15 @@ class RegisterScreen: UIView {
     
     private func configSuperView() {
         self.addSubview(backButton)
+        self.addSubview(self.imageAddUser)
     }
     
     private func configConstraints() { 
-        
+        NSLayoutConstraint.activate([
+            self.imageAddUser.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 20),
+            self.imageAddUser.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            self.imageAddUser.widthAnchor.constraint(equalToConstant: 150),
+            self.imageAddUser.heightAnchor.constraint(equalToConstant: 150),
+        ])
     }
 }
