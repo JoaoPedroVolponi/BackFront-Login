@@ -43,7 +43,7 @@ class RegisterScreen: UIView {
         tf.autocorrectionType = .no
         tf.backgroundColor = .white
         tf.borderStyle = .roundedRect
-        tf.keyboardType = .emailAddress
+        tf.keyboardType = .default
         tf.placeholder = "Digite sua Senha"
         tf.font = UIFont.systemFont(ofSize: 14)
         tf.textColor = .darkGray
@@ -75,6 +75,11 @@ class RegisterScreen: UIView {
     
     private func configBackGround() {
         self.backgroundColor = UIColor.gray
+    }
+    
+    public func configTextFieldDelegate(delegate: UITextFieldDelegate) {
+        self.emailTextField.delegate = delegate
+        self.passwordTextField.delegate = delegate
     }
     
     private func configSuperView() {

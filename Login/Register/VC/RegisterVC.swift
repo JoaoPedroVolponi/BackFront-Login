@@ -8,7 +8,7 @@
 import UIKit
 
 class RegisterVC: UIViewController {
-
+    
     var registerScreen: RegisterScreen?
     
     override func loadView() {
@@ -18,5 +18,13 @@ class RegisterVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.registerScreen?.configTextFieldDelegate(delegate: self)
+    }
+}
+
+extension RegisterVC: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }
