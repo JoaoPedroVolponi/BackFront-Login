@@ -80,6 +80,7 @@ class RegisterScreen: UIView {
         self.configBackGround()
         self.configSuperView()
         self.configConstraints()
+//        self.configButtonEnable(false) 
     }
     
     required init?(coder: NSCoder) {
