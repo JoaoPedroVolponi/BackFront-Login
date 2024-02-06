@@ -146,6 +146,7 @@ class LoginScreen: UIView {
     }
     
     private func setUpConstraints() {
+        
         NSLayoutConstraint.activate([
             self.loginLabel.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 10),
             self.loginLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor),
@@ -175,6 +176,12 @@ class LoginScreen: UIView {
             self.registerButton.trailingAnchor.constraint(equalTo: self.emailTextField.trailingAnchor),
             self.registerButton.heightAnchor.constraint(equalTo: self.emailTextField.heightAnchor),
         ])
+    }
+    
+    func configLoginLabelConstraints() {
+        self.loginLabel.snp.makeConstraints { make in
+            make.top.equalTo(self.safeAreaLayoutGuide.snp.top).offset(20)
+        }
     }
     
 }
