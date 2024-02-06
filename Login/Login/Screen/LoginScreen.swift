@@ -93,6 +93,7 @@ class LoginScreen: UIView {
         // ------
         self.configLoginLabelConstraints()
         self.configLogoAppImageViewConstraints()
+        self.configTextFieldEmailConstraints()
         // ------
         self.setUpConstraints()
         self.configButtonEnable(false)
@@ -152,12 +153,6 @@ class LoginScreen: UIView {
     private func setUpConstraints() {
         
         NSLayoutConstraint.activate([
-            
-            self.emailTextField.topAnchor.constraint(equalTo: self.logoAppImageView.bottomAnchor,constant: 20),
-            self.emailTextField.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
-            self.emailTextField.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20),
-            self.emailTextField.heightAnchor.constraint(equalToConstant: 45),
-            
             self.passwordTextField.topAnchor.constraint(equalTo: self.emailTextField.bottomAnchor,constant: 15),
             self.passwordTextField.leadingAnchor.constraint(equalTo: self.emailTextField.leadingAnchor),
             self.passwordTextField.trailingAnchor.constraint(equalTo: self.emailTextField.trailingAnchor),
@@ -188,6 +183,15 @@ class LoginScreen: UIView {
             make.leading.equalToSuperview().offset(60)
             make.trailing.equalToSuperview().inset(60)
             make.height.equalTo(200)
+        }
+    }
+    
+    func configTextFieldEmailConstraints() {
+        self.emailTextField.snp.makeConstraints { make in
+            make.top.equalTo(self.logoAppImageView.snp.bottom).offset(20)
+            make.leading.equalToSuperview().offset(20)
+            make.trailing.equalToSuperview().inset(20)
+            make.height.equalTo(45)
         }
     }
     
