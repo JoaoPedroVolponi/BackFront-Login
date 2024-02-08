@@ -134,10 +134,10 @@ class RegisterScreen: UIView {
     
     private func configConstraints() {
         NSLayoutConstraint.activate([
-            self.imageAddUser.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 20),
-            self.imageAddUser.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            self.imageAddUser.widthAnchor.constraint(equalToConstant: 150),
-            self.imageAddUser.heightAnchor.constraint(equalToConstant: 150),
+//            self.imageAddUser.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 20),
+//            self.imageAddUser.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+//            self.imageAddUser.widthAnchor.constraint(equalToConstant: 150),
+//            self.imageAddUser.heightAnchor.constraint(equalToConstant: 150),
             
             self.backButton.topAnchor.constraint(equalTo: self.imageAddUser.topAnchor),
             self.backButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
