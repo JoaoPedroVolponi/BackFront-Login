@@ -79,6 +79,9 @@ class RegisterScreen: UIView {
         super.init(frame: frame)
         self.configBackGround()
         self.configSuperView()
+        // ----
+        self.configLoginLabelConstraints()
+        // ----
         self.configConstraints()
         self.configButtonEnable(false) 
     }
@@ -134,11 +137,6 @@ class RegisterScreen: UIView {
     
     private func configConstraints() {
         NSLayoutConstraint.activate([
-//            self.imageAddUser.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 20),
-//            self.imageAddUser.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-//            self.imageAddUser.widthAnchor.constraint(equalToConstant: 150),
-//            self.imageAddUser.heightAnchor.constraint(equalToConstant: 150),
-            
             self.backButton.topAnchor.constraint(equalTo: self.imageAddUser.topAnchor),
             self.backButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
             
@@ -157,5 +155,17 @@ class RegisterScreen: UIView {
             self.registerButton.trailingAnchor.constraint(equalTo: self.emailTextField.trailingAnchor),
             self.registerButton.heightAnchor.constraint(equalTo: self.emailTextField.heightAnchor),
         ])
+    }
+    //            self.imageAddUser.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 20),
+    //            self.imageAddUser.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+    //            self.imageAddUser.widthAnchor.constraint(equalToConstant: 150),
+    //            self.imageAddUser.heightAnchor.constraint(equalToConstant: 150),
+    func configLoginLabelConstraints() {
+        self.imageAddUser.snp.makeConstraints { make in
+            make.top.equalTo(self.safeAreaLayoutGuide.snp.top).offset(20)
+            make.centerX.equalToSuperview()
+            make.width.equalTo(150)
+            make.height.equalTo(150)
+        }
     }
 }
