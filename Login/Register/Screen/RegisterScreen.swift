@@ -80,10 +80,11 @@ class RegisterScreen: UIView {
         self.configBackGround()
         self.configSuperView()
         // ----
-        self.configLoginLabelConstraints()
+        self.configImageUserConstraints()
+        self.configBackButtonConstraints()
         // ----
         self.configConstraints()
-        self.configButtonEnable(false) 
+        self.configButtonEnable(false)
     }
     
     required init?(coder: NSCoder) {
@@ -137,9 +138,6 @@ class RegisterScreen: UIView {
     
     private func configConstraints() {
         NSLayoutConstraint.activate([
-            self.backButton.topAnchor.constraint(equalTo: self.imageAddUser.topAnchor),
-            self.backButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
-            
             self.emailTextField.topAnchor.constraint(equalTo: self.imageAddUser.bottomAnchor, constant: 10),
             self.emailTextField.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
             self.emailTextField.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20),
@@ -156,16 +154,19 @@ class RegisterScreen: UIView {
             self.registerButton.heightAnchor.constraint(equalTo: self.emailTextField.heightAnchor),
         ])
     }
-    //            self.imageAddUser.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 20),
-    //            self.imageAddUser.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-    //            self.imageAddUser.widthAnchor.constraint(equalToConstant: 150),
-    //            self.imageAddUser.heightAnchor.constraint(equalToConstant: 150),
-    func configLoginLabelConstraints() {
+    func configImageUserConstraints() {
         self.imageAddUser.snp.makeConstraints { make in
             make.top.equalTo(self.safeAreaLayoutGuide.snp.top).offset(20)
             make.centerX.equalToSuperview()
             make.width.equalTo(150)
             make.height.equalTo(150)
+        }
+    }
+    
+    func configBackButtonConstraints() {
+        self.backButton.snp.makeConstraints { make in
+            make.top.equalTo(self.imageAddUser.snp.top)
+            make.leading.equalToSuperview().offset(20)
         }
     }
 }
