@@ -82,6 +82,7 @@ class RegisterScreen: UIView {
         // ----
         self.configImageUserConstraints()
         self.configBackButtonConstraints()
+        self.configEmailTextFieldConstraints()
         // ----
         self.configConstraints()
         self.configButtonEnable(false)
@@ -138,11 +139,6 @@ class RegisterScreen: UIView {
     
     private func configConstraints() {
         NSLayoutConstraint.activate([
-            self.emailTextField.topAnchor.constraint(equalTo: self.imageAddUser.bottomAnchor, constant: 10),
-            self.emailTextField.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
-            self.emailTextField.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20),
-            self.emailTextField.heightAnchor.constraint(equalToConstant: 45),
-            
             self.passwordTextField.topAnchor.constraint(equalTo: self.emailTextField.bottomAnchor, constant: 15),
             self.passwordTextField.leadingAnchor.constraint(equalTo: self.emailTextField.leadingAnchor),
             self.passwordTextField.trailingAnchor.constraint(equalTo: self.emailTextField.trailingAnchor),
@@ -158,8 +154,7 @@ class RegisterScreen: UIView {
         self.imageAddUser.snp.makeConstraints { make in
             make.top.equalTo(self.safeAreaLayoutGuide.snp.top).offset(20)
             make.centerX.equalToSuperview()
-            make.width.equalTo(150)
-            make.height.equalTo(150)
+            make.height.width.equalTo(150)
         }
     }
     
@@ -169,4 +164,13 @@ class RegisterScreen: UIView {
             make.leading.equalToSuperview().offset(20)
         }
     }
+    
+    func configEmailTextFieldConstraints() {
+        self.emailTextField.snp.makeConstraints { make in
+            make.top.equalTo(self.imageAddUser.snp.bottom).offset(10)
+            make.leading.equalToSuperview().offset(20)
+            make.trailing.equalToSuperview().inset(20)
+        }
+    }
+    
 }
