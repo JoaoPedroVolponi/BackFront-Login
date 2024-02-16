@@ -80,11 +80,7 @@ class RegisterScreen: UIView {
         self.configBackGround()
         self.configSuperView()
         // ----
-        self.configImageUserConstraints()
-        self.configBackButtonConstraints()
-        self.configEmailTextFieldConstraints()
-        self.configPasswordTextFieldConstraints()
-        self.configRegisterButtonConstraints()
+        self.configConstraints()
         // ----
         self.configButtonEnable(false)
     }
@@ -136,6 +132,14 @@ class RegisterScreen: UIView {
         self.addSubview(self.emailTextField)
         self.addSubview(self.passwordTextField)
         self.addSubview(self.registerButton)
+    }
+    
+    func configConstraints(){
+        self.configImageUserConstraints()
+        self.configBackButtonConstraints()
+        self.configEmailTextFieldConstraints()
+        self.configPasswordTextFieldConstraints()
+        self.configRegisterButtonConstraints()
     }
     
     func configImageUserConstraints() {
