@@ -90,14 +90,6 @@ class LoginScreen: UIView {
         super.init(frame: frame)
         self.configBackGround()
         self.configSuperView()
-        // ------
-        self.configLoginLabelConstraints()
-        self.configLogoAppImageViewConstraints()
-        self.configEmailTextFieldConstraints()
-        self.configPasswordTextFieldConstraints()
-        self.configLoginButtonConstraints()
-        self.configRegisterButtonConstraints()
-        // ------
         self.setUpConstraints()
         self.configButtonEnable(false)
     }
@@ -154,10 +146,12 @@ class LoginScreen: UIView {
     }
     
     private func setUpConstraints() {
-        
-        NSLayoutConstraint.activate([
-           
-        ])
+        self.configLoginLabelConstraints()
+        self.configLogoAppImageViewConstraints()
+        self.configEmailTextFieldConstraints()
+        self.configPasswordTextFieldConstraints()
+        self.configLoginButtonConstraints()
+        self.configRegisterButtonConstraints()
     }
     
     func configLoginLabelConstraints() {
