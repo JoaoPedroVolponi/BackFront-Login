@@ -79,9 +79,7 @@ class RegisterScreen: UIView {
         super.init(frame: frame)
         self.configBackGround()
         self.configSuperView()
-        // ----
         self.configConstraints()
-        // ----
         self.configButtonEnable(false)
     }
     
