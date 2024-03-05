@@ -38,7 +38,7 @@ extension LoginVC: LoginScreenProtocol {
         let vc: RegisterVC = RegisterVC()
         self.navigationController?.pushViewController(vc, animated: true)
     }
-    
+
     
 }
 

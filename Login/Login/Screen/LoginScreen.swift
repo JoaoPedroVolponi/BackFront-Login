@@ -196,7 +196,7 @@ class LoginScreen: UIView {
             make.height.equalTo(self.emailTextField.snp.height)
         }
     }
-
+    
     func configRegisterButtonConstraints(){
         self.registerButton.snp.makeConstraints { make in
             make.top.equalTo(self.loginButton.snp.bottom).offset(15)
